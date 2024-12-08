@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  backend1:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        SERVICE: backend
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - SERVER_PORT=${SERVER_PORT}
+    ports:
+      - "8081:${SERVER_PORT}"
+    depends_on:
+      - redis
+
+  backend2:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        SERVICE: backend
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - SERVER_PORT=${SERVER_PORT}
+    ports:
+      - "8082:${SERVER_PORT}"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        SERVICE: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - backend1
+      - backend2
+
+volumes:
+  redis-data:

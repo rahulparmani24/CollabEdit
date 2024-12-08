@@ -1,0 +1,6 @@
+github.com/go-redis/redis/v8 v8.11.5 h1:+xtVfFiUOp3BVlxlXgYErzUo6h9jEx7MPdR99/jUl6Y=
+github.com/go-redis/redis/v8 v8.11.5/go.mod h1:l8FzMC/AD9smcAmP8BhfRywm0LALoK32hSbS4fnhsUg=
+github.com/gorilla/websocket v1.5.0 h1:AH2Dmf9QCMsq93JP9dOEcIxlmymfltwdfFcVZCBHRjY=
+github.com/gorilla/websocket v1.5.0/go.mod h1:IjqXEXxgfKgfSj6QoKq9Ln+QzMzKoO/0YY3GJNmKww4=
+golang.org/x/sys v0.3.0 h1:tDULuxlHaH7KiAfryvC6+BZrdtOnHTqIx0z6fB/hB8I=
+golang.org/x/sys v0.3.0/go.mod h1:5hdAM4vHPp6F6HrqL3xW8Vcr7PFDACj8n+4lzPCQu5Y=
